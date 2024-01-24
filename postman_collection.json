@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "39463a32-fff1-4d03-bfba-e82bbc7c4419",
+		"name": "Talkshop Analytics Service [Abhishek Shah]",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11273162",
+		"_collection_link": "https://abhishek-tech.postman.co/workspace/default~9d361d3d-9dfc-4f25-b3e4-af32d7a8a22e/collection/11273162-39463a32-fff1-4d03-bfba-e82bbc7c4419?action=share&source=collection_link&creator=11273162"
+	},
+	"item": [
+		{
+			"name": "/ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/ping",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"ping"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/ping",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12-6FyCUNJCdUkgXM8yXmM99u6fQw0\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Jan 2024 21:20:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"pong\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/v1/posts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uuid\": \"{{$randomUUID}}\",\n    \"caption\":\"{{$randomPhrase}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/v1/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"posts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"uuid\": \"c3ceaad9-596a-41eb-bc1b-f4d986d71dfd\",\n    \"caption\":\"Exploring ancient ruins in the hot sun, history comes alive as stories from centuries ago are uncovered. Endless adventure awaits around every corner.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/api/v1/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"posts"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "RateLimit-Policy",
+							"value": "2;w=5"
+						},
+						{
+							"key": "RateLimit-Limit",
+							"value": "2"
+						},
+						{
+							"key": "RateLimit-Remaining",
+							"value": "1"
+						},
+						{
+							"key": "RateLimit-Reset",
+							"value": "5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "259"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"103-Qp4fl/gMxE7kFO9pillsvQSTdhA\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Jan 2024 21:20:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"post\": {\n        \"id\": 9,\n        \"uuid\": \"c3ceaad9-596a-41eb-bc1b-f4d986d71dfd\",\n        \"caption\": \"Exploring ancient ruins in the hot sun, history comes alive as stories from centuries ago are uncovered. Endless adventure awaits around every corner.\",\n        \"updatedAt\": \"2024-01-24T21:20:15.427Z\",\n        \"createdAt\": \"2024-01-24T21:20:15.427Z\"\n    },\n    \"message\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/v1/posts/:id/analysis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/api/v1/posts/:id/analysis",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"posts",
+						":id",
+						"analysis"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/api/v1/posts/:id/analysis",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								":id",
+								"analysis"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "RateLimit-Policy",
+							"value": "2;w=5"
+						},
+						{
+							"key": "RateLimit-Limit",
+							"value": "2"
+						},
+						{
+							"key": "RateLimit-Remaining",
+							"value": "1"
+						},
+						{
+							"key": "RateLimit-Reset",
+							"value": "5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3c-N34WxguCfeciwY8lbfvKPhTH6I0\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Jan 2024 21:21:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"success\",\n    \"wordCount\": 20,\n    \"averageWordCount\": 17.1\n}"
+				}
+			]
+		}
+	]
+}
