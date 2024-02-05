@@ -9,3 +9,17 @@ const rateLimiter = rateLimit({
 });
 
 module.exports = rateLimiter;
+// 12:00:00
+// 1.1.1.1 - 12:00:00/count= 1 (0 sec) EXP - 12:00:05
+// 12:00:03
+// 1.1.1.1 - 12:00:00/count= 2
+// evicted
+// 12:00:06
+// 1.1.1.1 - 12:00:06/count= 1 exp - 12:00:11
+// 12:00:07 (1 sec)
+// 1.1.1.1 - 12:00:06/count= 2
+// 12:00:08
+
+
+// 1.1.1.1 - timeNew/count= 1
+

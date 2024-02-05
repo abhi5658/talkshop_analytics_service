@@ -17,11 +17,11 @@ module.exports.getAnalysis = async (req, res, next) => {
 
     const wordCountData = await postService.getCaptionWordCount(id);
 
-    const averageWordCountData = await postService.getAvgWordCount();
+    const averageWordCountData = await postService.getAvgWordCount(id);
 
     res.json({
         message: 'success',
         wordCount: wordCountData.count,
-        averageWordCount: averageWordCountData.count
+        averageWordLengthCount: averageWordCountData.avg_length
     });
 }
