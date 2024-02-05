@@ -15,6 +15,9 @@ app.get('/ping', (req, res) => {
 const postRoutes = require('./routes/postRoutes');
 app.use('/api/v1/', rateLimiter, postRoutes);
 
+const tradingRoutes = require('./routes/tradingRoutes');
+app.use('/api/v1/', tradingRoutes);
+
 // default 404 handler
 app.use(function (req, res, next) {
     res.status(404);
