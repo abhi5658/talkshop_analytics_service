@@ -1,0 +1,702 @@
+{
+	"info": {
+		"_postman_id": "7fd503e7-f8dc-46ef-9861-0029147dec90",
+		"name": "Mock stock trading backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11273162",
+		"_collection_link": "https://www.postman.com/abhishek-tech/workspace/public-workspace/collection/11273162-7fd503e7-f8dc-46ef-9861-0029147dec90?action=share&source=collection_link&creator=11273162"
+	},
+	"item": [
+		{
+			"name": "/ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/ping",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"ping"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/ping",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12-6FyCUNJCdUkgXM8yXmM99u6fQw0\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Jan 2024 21:20:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"pong\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/v1/user/videos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1,\n    \"url\":\"https://s3.aws.com/videos/{{$randomUUID}}.mp4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/v1/user/videos",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"videos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 1,\n    \"url\":\"https://s3.aws.com/videos/{{$randomUUID}}.mp4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/api/v1/user/videos",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"videos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "RateLimit-Policy",
+							"value": "2;w=5"
+						},
+						{
+							"key": "RateLimit-Limit",
+							"value": "2"
+						},
+						{
+							"key": "RateLimit-Remaining",
+							"value": "1"
+						},
+						{
+							"key": "RateLimit-Reset",
+							"value": "5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "189"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"bd-ZXC+z7JPnW3RpNpwV3GikcH/bx4\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Feb 2024 17:20:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"createdVideo\": {\n        \"id\": 1,\n        \"url\": \"https://s3.aws.com/videos/a96e636d-e3eb-41ef-a94d-af7560904dc4.mp4\",\n        \"userId\": 1,\n        \"updatedAt\": \"2024-02-05T17:20:34.899Z\",\n        \"createdAt\": \"2024-02-05T17:20:34.899Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/v1/user/videos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/api/v1/user/videos?userId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"videos"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/api/v1/user/videos?userId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"videos"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "RateLimit-Policy",
+							"value": "2;w=5"
+						},
+						{
+							"key": "RateLimit-Limit",
+							"value": "2"
+						},
+						{
+							"key": "RateLimit-Remaining",
+							"value": "0"
+						},
+						{
+							"key": "RateLimit-Reset",
+							"value": "4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "185"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b9-SuK5kJzkybLA6Fop1oGxQor+7/M\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Feb 2024 17:20:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"videos\": [\n        {\n            \"id\": 1,\n            \"url\": \"https://s3.aws.com/videos/a96e636d-e3eb-41ef-a94d-af7560904dc4.mp4\",\n            \"createdAt\": \"2024-02-05T17:20:34.899Z\",\n            \"updatedAt\": \"2024-02-05T17:20:34.899Z\",\n            \"userId\": 1\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/v1/trade/buy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1,\n    \"stockId\": 1,\n    \"quantity\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/v1/trade/buy",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"trade",
+						"buy"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 1,\n    \"stockId\": 1,\n    \"quantity\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/api/v1/trade/buy",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"trade",
+								"buy"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "RateLimit-Policy",
+							"value": "2;w=5"
+						},
+						{
+							"key": "RateLimit-Limit",
+							"value": "2"
+						},
+						{
+							"key": "RateLimit-Remaining",
+							"value": "1"
+						},
+						{
+							"key": "RateLimit-Reset",
+							"value": "5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "305"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"131-49lJRc99BRV5mssxljpUgOhN9qg\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Feb 2024 17:21:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"portfolio\": {\n        \"id\": 1,\n        \"stockId\": 1,\n        \"userId\": 1,\n        \"quantity\": 100,\n        \"updatedAt\": \"2024-02-05T17:21:11.107Z\",\n        \"createdAt\": \"2024-02-05T17:21:11.102Z\"\n    },\n    \"tradedStock\": {\n        \"id\": 1,\n        \"quantity\": 100,\n        \"tradeType\": \"BUY\",\n        \"rate\": 10,\n        \"stockId\": 1,\n        \"userId\": 1,\n        \"updatedAt\": \"2024-02-05T17:21:11.084Z\",\n        \"createdAt\": \"2024-02-05T17:21:11.084Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/v1/trade/sell",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1,\n    \"stockId\": 1,\n    \"quantity\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/v1/trade/sell",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"trade",
+						"sell"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 1,\n    \"stockId\": 1,\n    \"quantity\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/api/v1/trade/sell",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"trade",
+								"sell"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "RateLimit-Policy",
+							"value": "2;w=5"
+						},
+						{
+							"key": "RateLimit-Limit",
+							"value": "2"
+						},
+						{
+							"key": "RateLimit-Remaining",
+							"value": "1"
+						},
+						{
+							"key": "RateLimit-Reset",
+							"value": "5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "303"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12f-WFQqKLyXeey1fM+umL+OKedoRoI\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Feb 2024 17:21:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"portfolio\": {\n        \"id\": 1,\n        \"quantity\": 95,\n        \"createdAt\": \"2024-02-05T17:21:11.102Z\",\n        \"updatedAt\": \"2024-02-05T17:21:30.184Z\",\n        \"userId\": 1,\n        \"stockId\": 1\n    },\n    \"tradedStock\": {\n        \"id\": 2,\n        \"quantity\": 5,\n        \"tradeType\": \"SELL\",\n        \"rate\": 10,\n        \"stockId\": 1,\n        \"userId\": 1,\n        \"updatedAt\": \"2024-02-05T17:21:30.174Z\",\n        \"createdAt\": \"2024-02-05T17:21:30.174Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/v1/user/trades",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/api/v1/user/trades?userId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"trades"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/api/v1/user/trades?userId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"trades"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "RateLimit-Policy",
+							"value": "2;w=5"
+						},
+						{
+							"key": "RateLimit-Limit",
+							"value": "2"
+						},
+						{
+							"key": "RateLimit-Remaining",
+							"value": "1"
+						},
+						{
+							"key": "RateLimit-Reset",
+							"value": "5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "317"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13d-wNG5S1ebFEIqN1nnzZstANicReM\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Feb 2024 17:22:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"trades\": [\n        {\n            \"id\": 2,\n            \"quantity\": 5,\n            \"rate\": 10,\n            \"tradeType\": \"SELL\",\n            \"createdAt\": \"2024-02-05T17:21:30.174Z\",\n            \"updatedAt\": \"2024-02-05T17:21:30.174Z\",\n            \"userId\": 1,\n            \"stockId\": 1\n        },\n        {\n            \"id\": 1,\n            \"quantity\": 100,\n            \"rate\": 10,\n            \"tradeType\": \"BUY\",\n            \"createdAt\": \"2024-02-05T17:21:11.084Z\",\n            \"updatedAt\": \"2024-02-05T17:21:11.084Z\",\n            \"userId\": 1,\n            \"stockId\": 1\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/v1/public/leaderboard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/api/v1/public/leaderboard",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"public",
+						"leaderboard"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/api/v1/public/leaderboard",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"public",
+								"leaderboard"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "356"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"164-lGjv409tn09bLXOQErQMVmKuo3w\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Feb 2024 17:27:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"users\": [\n        {\n            \"id\": 1,\n            \"name\": \"ABC\",\n            \"balance\": 9150,\n            \"createdAt\": \"2024-02-05T16:52:31.384Z\",\n            \"updatedAt\": \"2024-02-05T17:23:06.737Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"XYZ\",\n            \"balance\": 8600,\n            \"createdAt\": \"2024-02-05T16:52:31.384Z\",\n            \"updatedAt\": \"2024-02-05T17:26:58.862Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"LMN\",\n            \"balance\": 8300,\n            \"createdAt\": \"2024-02-05T16:52:31.384Z\",\n            \"updatedAt\": \"2024-02-05T17:26:54.691Z\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
