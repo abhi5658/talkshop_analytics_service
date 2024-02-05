@@ -1,4 +1,5 @@
 # talkshop_analytics_service
+This repo houses 2 backend service - social media post analytics service and mock stock trading backend
 
 ## APIs
 ### Post service
@@ -6,6 +7,16 @@
 
 1. **_GET_** `/api/v1/posts/:id/analysis` - Retrieves word count of specific post and average word count of all post
 1. **_POST_** `/api/v1/posts` - Creates a new post with a caption
+
+### Mock stock trading service
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://app.getpostman.com/run-collection/11273162-7fd503e7-f8dc-46ef-9861-0029147dec90?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D11273162-7fd503e7-f8dc-46ef-9861-0029147dec90%26entityType%3Dcollection%26workspaceId%3D23b2cc40-0e40-4074-9f28-d84c3c95dc5b)
+
+1. **_POST_** `/api/v1/user/videos` - upload user reaction videos
+1. **_GET_** `/api/v1/user/videos` - get user reaction videos
+1. **_POST_** `/api/v1/trade/buy` - buy a stock
+1. **_POST_** `/api/v1/trade/sell` - sell a stock
+1. **_GET_** `/api/v1/user/trades` - get trades by a user
+1. **_GET_** `/api/v1/public/leaderboard` - get current leaderboard status
 
 ## Server Notes
 
@@ -35,6 +46,7 @@ npm run start
 ```
 - Open Postman
   - Import `postman_collection.json` from this repo to test out the post analytics service
+  - Import `trading.postman_collection.json` from this repo to test out the mock stock trading service
   - Run all the request to test out all applications
 
 ## Scalability Considerations:

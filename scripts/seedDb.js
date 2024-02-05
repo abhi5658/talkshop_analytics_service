@@ -1,12 +1,16 @@
 const { Post } = require('../src/models');
+const { sequelize, User, Videos, Portfolio, Trades, Stocks } = require('../src/models');
 const uuidV4 = require('uuid').v4;
 
 /* WARNING THIS WILL DROP THE CURRENT DATABASE */
 module.exports = seed();
 
 async function seed() {
+  // reset full DB and create tables
+  await sequelize.sync({ force: true });
+
   // create tables
-  await Post.sync({ force: true });
+  // await Post.sync({ force: true });
 
   //insert data
   await Promise.all([
@@ -50,5 +54,35 @@ async function seed() {
       uuid: uuidV4(),
       caption: 'Exploring flavors from around the world in my own kitchen. 🍜 Bringing global cuisine to the dining table. #FoodieAdventures #HomeChefVibes',
     }),
+  ]);
+
+  await Promise.all([
+    User.create({
+      id: 1,
+      name: 'ABC',
+    }),
+    User.create({
+      id: 2,
+      name: 'LMN',
+    }),
+    User.create({
+      id: 3,
+      name: 'XYZ',
+    }),
+    Stocks.create({
+      id: 1,
+      name: 'Stock1',
+      rate: 10
+    }),
+    Stocks.create({
+      id: 2,
+      name: 'Stock2',
+      rate: 20
+    }),
+    Stocks.create({
+      id: 3,
+      name: 'Stock3',
+      rate: 30
+    })
   ]);
 }
