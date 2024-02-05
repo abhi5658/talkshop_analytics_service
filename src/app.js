@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
-const rateLimiter = require('./middleware/rateLimiter');
+// const rateLimiter = require('./middleware/rateLimiter');
 
 const app = express();
 app.use(bodyParser.json());
@@ -13,7 +13,7 @@ app.get('/ping', (req, res) => {
 });
 
 const postRoutes = require('./routes/postRoutes');
-app.use('/api/v1/', rateLimiter, postRoutes);
+app.use('/api/v1/', postRoutes);
 
 const tradingRoutes = require('./routes/tradingRoutes');
 app.use('/api/v1/', tradingRoutes);
